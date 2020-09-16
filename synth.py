@@ -30,7 +30,7 @@ for version in versions:
     version,
     bazel_target=f"//google/area120/tables/{version}:area120-tables-{version}-nodejs"
   )
-  s.copy(library, excludes=[])
+  s.copy(library, excludes=["README.md", "package.json"])
 
 # Copy common templates
 common_templates = gcp.CommonTemplates()
