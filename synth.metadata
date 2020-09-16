@@ -4,22 +4,22 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:googleapis/nodejs-area120-tables.git",
-        "sha": "7f021394a6f7c9bb1f741a3e989f410e9fe6aa98"
+        "sha": "5c78ad29841ccfc4bfb7cba7fa221934555ad765"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5e53d6b6dde0e72fa9510ec1d796176d128afa40",
-        "internalRef": "331912851"
+        "sha": "a07206ef5b643d2cb115fa76d126f66ef156bca3",
+        "internalRef": "332074649"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "fdd03c161003ab97657cc0218f25c82c89ddf4b6"
+        "sha": "dba48bb9bc6959c232bec9150ac6313b608fe7bd"
       }
     }
   ],
@@ -27,7 +27,7 @@
     {
       "client": {
         "source": "googleapis",
-        "apiName": "analyticsadmin",
+        "apiName": "area120tables",
         "apiVersion": "v1alpha1",
         "language": "nodejs",
         "generator": "bazel"

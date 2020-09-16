@@ -26,7 +26,7 @@ gapic = gcp.GAPICBazel()
 versions = ['v1alpha1']
 for version in versions:
   library = gapic.node_library(
-    'analyticsadmin',
+    'area120tables',
     version,
     bazel_target=f"//google/area120/tables/{version}:area120-tables-{version}-nodejs"
   )
