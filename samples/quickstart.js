@@ -13,8 +13,9 @@
 
 'use strict';
 
+// eslint-disable-next-line no-unused-vars
 async function main(projectId) {
-  // [START cloud_data_analytics_quickstart]
+  // [START area120_tables_quickstart]
   // Imports the Google Cloud client library
 
   // eslint-disable-next-line node/no-extraneous-require, node/no-missing-require
@@ -32,7 +33,7 @@ async function main(projectId) {
   }
 
   listTables();
-  // [END cloud_data_analytics_quickstart]
+  // [END area120_tables_quickstart]
 }
 
 process.on('unhandledRejection', err => {
