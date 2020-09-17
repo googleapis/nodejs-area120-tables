@@ -2,7 +2,7 @@
   "name": "@google/area120-tables",
   "version": "0.1.0",
   "description": "Tables client for Node.js",
-  "repository": "googleapis/nodejs-tables",
+  "repository": "googleapis/nodejs-area120-tables",
   "license": "Apache-2.0",
   "author": "Google LLC",
   "main": "build/src/index.js",
