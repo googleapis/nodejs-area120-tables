@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {TablesServiceClient} from 'tables';
+import {TablesServiceClient} from '@google/area120-tables';
 
 function main() {
   new TablesServiceClient();
