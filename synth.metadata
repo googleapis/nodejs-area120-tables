@@ -4,7 +4,15 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:googleapis/nodejs-area120-tables.git",
-        "sha": "a496af78f546e0f313337baf9c9bb5894dbea699"
+        "sha": "6abaa583083fe4666a3e1d979809b6fdd743b860"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "5359df5297982d551ac5dcc20c8a29de04c70090",
+        "internalRef": "341146950"
       }
     },
     {
@@ -79,14 +87,13 @@
     "README.md",
     "api-extractor.json",
     "linkinator.config.json",
-    "package-lock.json.1585923408",
     "protos/google/area120/tables/v1alpha1/tables.proto",
     "protos/protos.d.ts",
     "protos/protos.js",
     "protos/protos.json",
     "renovate.json",
     "samples/README.md",
-    "samples/package-lock.json.2452378802",
+    "samples/package-lock.json.2183587802",
     "src/index.ts",
     "src/v1alpha1/index.ts",
     "src/v1alpha1/tables_service_client.ts",
