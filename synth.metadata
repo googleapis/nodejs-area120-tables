@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/nodejs-area120-tables.git",
-        "sha": "6abaa583083fe4666a3e1d979809b6fdd743b860"
+        "remote": "https://github.com/googleapis/nodejs-area120-tables.git",
+        "sha": "7a0eb3d8b32033db77af725f2c44b0ac70e94ef8"
       }
     },
     {
@@ -93,7 +93,6 @@
     "protos/protos.json",
     "renovate.json",
     "samples/README.md",
-    "samples/package-lock.json.2183587802",
     "src/index.ts",
     "src/v1alpha1/index.ts",
     "src/v1alpha1/tables_service_client.ts",
