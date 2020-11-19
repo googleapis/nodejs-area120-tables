@@ -30,6 +30,11 @@ import * as path from 'path';
 import {Transform} from 'stream';
 import {RequestType} from 'google-gax/build/src/apitypes';
 import * as protos from '../../protos/protos';
+/**
+ * Client JSON configuration object, loaded from
+ * `src/v1alpha1/tables_service_client_config.json`.
+ * This file defines retry strategy and timeouts for all API methods in this library.
+ */
 import * as gapicConfig from './tables_service_client_config.json';
 
 const version = require('../../../package.json').version;
@@ -90,9 +95,9 @@ export class TablesServiceClient {
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
-   * @param {gax.ClientConfig} [options.clientConfig] - client configuration override.
-   *     Follows the structure of `tables_service_client_config.json`.
-   * @param {boolean} fallback - Use HTTP fallback mode.
+   * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
+   *     Follows the structure of {@link gapicConfig}.
+   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
    *     In fallback mode, a special browser-compatible transport implementation is used
    *     instead of gRPC transport. In browser context (if the `window` object is defined)
    *     the fallback mode is enabled automatically; set `options.fallback` to `false`
@@ -105,6 +110,7 @@ export class TablesServiceClient {
       opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
+    // eslint-disable-next-line no-undef
     const fallback =
       opts?.fallback ??
       (typeof window !== 'undefined' && typeof window.fetch !== 'undefined');
@@ -333,7 +339,7 @@ export class TablesServiceClient {
   // -------------------
   getTable(
     request: protos.google.area120.tables.v1alpha1.IGetTableRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.ITable,
@@ -343,7 +349,7 @@ export class TablesServiceClient {
   >;
   getTable(
     request: protos.google.area120.tables.v1alpha1.IGetTableRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.area120.tables.v1alpha1.ITable,
       protos.google.area120.tables.v1alpha1.IGetTableRequest | null | undefined,
@@ -379,7 +385,7 @@ export class TablesServiceClient {
   getTable(
     request: protos.google.area120.tables.v1alpha1.IGetTableRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.area120.tables.v1alpha1.ITable,
           | protos.google.area120.tables.v1alpha1.IGetTableRequest
@@ -400,12 +406,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -420,7 +426,7 @@ export class TablesServiceClient {
   }
   getRow(
     request: protos.google.area120.tables.v1alpha1.IGetRowRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.IRow,
@@ -430,7 +436,7 @@ export class TablesServiceClient {
   >;
   getRow(
     request: protos.google.area120.tables.v1alpha1.IGetRowRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.area120.tables.v1alpha1.IRow,
       protos.google.area120.tables.v1alpha1.IGetRowRequest | null | undefined,
@@ -469,7 +475,7 @@ export class TablesServiceClient {
   getRow(
     request: protos.google.area120.tables.v1alpha1.IGetRowRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.area120.tables.v1alpha1.IRow,
           | protos.google.area120.tables.v1alpha1.IGetRowRequest
@@ -490,12 +496,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -510,7 +516,7 @@ export class TablesServiceClient {
   }
   createRow(
     request: protos.google.area120.tables.v1alpha1.ICreateRowRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.IRow,
@@ -520,7 +526,7 @@ export class TablesServiceClient {
   >;
   createRow(
     request: protos.google.area120.tables.v1alpha1.ICreateRowRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.area120.tables.v1alpha1.IRow,
       | protos.google.area120.tables.v1alpha1.ICreateRowRequest
@@ -565,7 +571,7 @@ export class TablesServiceClient {
   createRow(
     request: protos.google.area120.tables.v1alpha1.ICreateRowRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.area120.tables.v1alpha1.IRow,
           | protos.google.area120.tables.v1alpha1.ICreateRowRequest
@@ -588,12 +594,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -608,7 +614,7 @@ export class TablesServiceClient {
   }
   batchCreateRows(
     request: protos.google.area120.tables.v1alpha1.IBatchCreateRowsRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.IBatchCreateRowsResponse,
@@ -618,7 +624,7 @@ export class TablesServiceClient {
   >;
   batchCreateRows(
     request: protos.google.area120.tables.v1alpha1.IBatchCreateRowsRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.area120.tables.v1alpha1.IBatchCreateRowsResponse,
       | protos.google.area120.tables.v1alpha1.IBatchCreateRowsRequest
@@ -662,7 +668,7 @@ export class TablesServiceClient {
   batchCreateRows(
     request: protos.google.area120.tables.v1alpha1.IBatchCreateRowsRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.area120.tables.v1alpha1.IBatchCreateRowsResponse,
           | protos.google.area120.tables.v1alpha1.IBatchCreateRowsRequest
@@ -685,12 +691,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -705,7 +711,7 @@ export class TablesServiceClient {
   }
   updateRow(
     request: protos.google.area120.tables.v1alpha1.IUpdateRowRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.IRow,
@@ -715,7 +721,7 @@ export class TablesServiceClient {
   >;
   updateRow(
     request: protos.google.area120.tables.v1alpha1.IUpdateRowRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.area120.tables.v1alpha1.IRow,
       | protos.google.area120.tables.v1alpha1.IUpdateRowRequest
@@ -759,7 +765,7 @@ export class TablesServiceClient {
   updateRow(
     request: protos.google.area120.tables.v1alpha1.IUpdateRowRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.area120.tables.v1alpha1.IRow,
           | protos.google.area120.tables.v1alpha1.IUpdateRowRequest
@@ -782,12 +788,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -802,7 +808,7 @@ export class TablesServiceClient {
   }
   batchUpdateRows(
     request: protos.google.area120.tables.v1alpha1.IBatchUpdateRowsRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.IBatchUpdateRowsResponse,
@@ -812,7 +818,7 @@ export class TablesServiceClient {
   >;
   batchUpdateRows(
     request: protos.google.area120.tables.v1alpha1.IBatchUpdateRowsRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.area120.tables.v1alpha1.IBatchUpdateRowsResponse,
       | protos.google.area120.tables.v1alpha1.IBatchUpdateRowsRequest
@@ -856,7 +862,7 @@ export class TablesServiceClient {
   batchUpdateRows(
     request: protos.google.area120.tables.v1alpha1.IBatchUpdateRowsRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.area120.tables.v1alpha1.IBatchUpdateRowsResponse,
           | protos.google.area120.tables.v1alpha1.IBatchUpdateRowsRequest
@@ -879,12 +885,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -899,7 +905,7 @@ export class TablesServiceClient {
   }
   deleteRow(
     request: protos.google.area120.tables.v1alpha1.IDeleteRowRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.protobuf.IEmpty,
@@ -909,7 +915,7 @@ export class TablesServiceClient {
   >;
   deleteRow(
     request: protos.google.area120.tables.v1alpha1.IDeleteRowRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.protobuf.IEmpty,
       | protos.google.area120.tables.v1alpha1.IDeleteRowRequest
@@ -949,7 +955,7 @@ export class TablesServiceClient {
   deleteRow(
     request: protos.google.area120.tables.v1alpha1.IDeleteRowRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.protobuf.IEmpty,
           | protos.google.area120.tables.v1alpha1.IDeleteRowRequest
@@ -972,12 +978,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -993,7 +999,7 @@ export class TablesServiceClient {
 
   listTables(
     request: protos.google.area120.tables.v1alpha1.IListTablesRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.ITable[],
@@ -1003,7 +1009,7 @@ export class TablesServiceClient {
   >;
   listTables(
     request: protos.google.area120.tables.v1alpha1.IListTablesRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: PaginationCallback<
       protos.google.area120.tables.v1alpha1.IListTablesRequest,
       | protos.google.area120.tables.v1alpha1.IListTablesResponse
@@ -1055,7 +1061,7 @@ export class TablesServiceClient {
   listTables(
     request: protos.google.area120.tables.v1alpha1.IListTablesRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | PaginationCallback<
           protos.google.area120.tables.v1alpha1.IListTablesRequest,
           | protos.google.area120.tables.v1alpha1.IListTablesResponse
@@ -1078,12 +1084,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     this.initialize();
@@ -1120,7 +1126,7 @@ export class TablesServiceClient {
    */
   listTablesStream(
     request?: protos.google.area120.tables.v1alpha1.IListTablesRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Transform {
     request = request || {};
     options = options || {};
@@ -1169,7 +1175,7 @@ export class TablesServiceClient {
    */
   listTablesAsync(
     request?: protos.google.area120.tables.v1alpha1.IListTablesRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): AsyncIterable<protos.google.area120.tables.v1alpha1.ITable> {
     request = request || {};
     options = options || {};
@@ -1184,7 +1190,7 @@ export class TablesServiceClient {
   }
   listRows(
     request: protos.google.area120.tables.v1alpha1.IListRowsRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.area120.tables.v1alpha1.IRow[],
@@ -1194,7 +1200,7 @@ export class TablesServiceClient {
   >;
   listRows(
     request: protos.google.area120.tables.v1alpha1.IListRowsRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: PaginationCallback<
       protos.google.area120.tables.v1alpha1.IListRowsRequest,
       | protos.google.area120.tables.v1alpha1.IListRowsResponse
@@ -1252,7 +1258,7 @@ export class TablesServiceClient {
   listRows(
     request: protos.google.area120.tables.v1alpha1.IListRowsRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | PaginationCallback<
           protos.google.area120.tables.v1alpha1.IListRowsRequest,
           | protos.google.area120.tables.v1alpha1.IListRowsResponse
@@ -1275,12 +1281,12 @@ export class TablesServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -1330,7 +1336,7 @@ export class TablesServiceClient {
    */
   listRowsStream(
     request?: protos.google.area120.tables.v1alpha1.IListRowsRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Transform {
     request = request || {};
     options = options || {};
@@ -1392,7 +1398,7 @@ export class TablesServiceClient {
    */
   listRowsAsync(
     request?: protos.google.area120.tables.v1alpha1.IListRowsRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): AsyncIterable<protos.google.area120.tables.v1alpha1.IRow> {
     request = request || {};
     options = options || {};
