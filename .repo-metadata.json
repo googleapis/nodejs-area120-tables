@@ -1,14 +1,15 @@
 {
-  "name": "area120tables",
-  "name_pretty": "Area120 Tables API",
-  "product_documentation": "https://area120.google.com/",
-  "client_documentation": "https://googleapis.dev/nodejs/area120tables/latest",
-  "issue_tracker": "",
+  "default_version": "v1alpha",
   "release_level": "alpha",
-  "language": "nodejs",
-  "repo": "googleapis/nodejs-area120-tables",
-  "distribution_name": "@google/area120-tables",
-  "api_id": "area120tables.googleapis.com",
   "requires_billing": true,
-  "codeowner_team": "@googleapis/area120-tables"
+  "client_documentation": "https://googleapis.dev/nodejs/area120tables/latest",
+  "codeowner_team": "@googleapis/area120-tables",
+  "language": "nodejs",
+  "issue_tracker": "",
+  "product_documentation": "https://area120.google.com/",
+  "name": "area120tables",
+  "distribution_name": "@google/area120-tables",
+  "name_pretty": "Area120 Tables API",
+  "api_id": "area120tables.googleapis.com",
+  "repo": "googleapis/nodejs-area120-tables"
 }
