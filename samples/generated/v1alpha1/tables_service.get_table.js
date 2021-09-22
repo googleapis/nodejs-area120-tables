@@ -12,28 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, row) {
-  // [START tables_create_row_sample]
+function main(name) {
+  // [START tables_get_table_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The parent table where this row will be created.
+   *  Required. The name of the table to retrieve.
    *  Format: tables/{table}
    */
-  // const parent = 'abc123'
-  /**
-   *  Required. The row to create.
-   */
-  // const row = ''
-  /**
-   *  Optional. Column key to use for values in the row.
-   *  Defaults to user entered name.
-   */
-  // const view = ''
+  // const name = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -41,20 +31,19 @@ function main(parent, row) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function createRow() {
+  async function getTable() {
     // Construct request
     const request = {
-      parent,
-      row,
+      name,
     };
 
     // Run request
-    const response = await tablesClient.createRow(request);
+    const response = await tablesClient.getTable(request);
     console.log(response);
   }
 
-  createRow();
-  // [END tables_create_row_sample]
+  getTable();
+  // [END tables_get_table_sample]
 }
 
 process.on('unhandledRejection', err => {

@@ -12,22 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(row) {
-  // [START tables_update_row_sample]
+function main(parent, row) {
+  // [START tables_create_row_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The row to update.
+   *  Required. The parent table where this row will be created.
+   *  Format: tables/{table}
+   */
+  // const parent = 'abc123'
+  /**
+   *  Required. The row to create.
    */
   // const row = ''
-  /**
-   *  The list of fields to update.
-   */
-  // const updateMask = ''
   /**
    *  Optional. Column key to use for values in the row.
    *  Defaults to user entered name.
@@ -40,19 +40,20 @@ function main(row) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function updateRow() {
+  async function createRow() {
     // Construct request
     const request = {
+      parent,
       row,
     };
 
     // Run request
-    const response = await tablesClient.updateRow(request);
+    const response = await tablesClient.createRow(request);
     console.log(response);
   }
 
-  updateRow();
-  // [END tables_update_row_sample]
+  createRow();
+  // [END tables_create_row_sample]
 }
 
 process.on('unhandledRejection', err => {

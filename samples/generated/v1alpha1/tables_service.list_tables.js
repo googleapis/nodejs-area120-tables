@@ -12,24 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START tables_get_row_sample]
+function main() {
+  // [START tables_list_tables_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the row to retrieve.
-   *  Format: tables/{table}/rows/{row}
+   *  The maximum number of tables to return. The service may return fewer than
+   *  this value.
+   *  If unspecified, at most 20 tables are returned. The maximum value is 100;
+   *  values above 100 are coerced to 100.
    */
-  // const name = 'abc123'
+  // const pageSize = 1234
   /**
-   *  Optional. Column key to use for values in the row.
-   *  Defaults to user entered name.
+   *  A page token, received from a previous `ListTables` call.
+   *  Provide this to retrieve the subsequent page.
+   *  When paginating, all other parameters provided to `ListTables` must match
+   *  the call that provided the page token.
    */
-  // const view = ''
+  // const pageToken = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -37,19 +40,19 @@ function main(name) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function getRow() {
+  async function listTables() {
     // Construct request
-    const request = {
-      name,
-    };
+    const request = {};
 
     // Run request
-    const response = await tablesClient.getRow(request);
-    console.log(response);
+    const iterable = await tablesClient.listTablesAsync(request);
+    for await (const response of iterable) {
+      console.log(response);
+    }
   }
 
-  getRow();
-  // [END tables_get_row_sample]
+  listTables();
+  // [END tables_list_tables_sample]
 }
 
 process.on('unhandledRejection', err => {

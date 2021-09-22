@@ -12,19 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START tables_get_workspace_sample]
+function main(parent, requests) {
+  // [START tables_batch_create_rows_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the workspace to retrieve.
-   *  Format: workspaces/{workspace}
+   *  Required. The parent table where the rows will be created.
+   *  Format: tables/{table}
    */
-  // const name = 'abc123'
+  // const parent = 'abc123'
+  /**
+   *  Required. The request message specifying the rows to create.
+   *  A maximum of 500 rows can be created in a single batch.
+   */
+  // const requests = 1234
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -32,19 +36,20 @@ function main(name) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function getWorkspace() {
+  async function batchCreateRows() {
     // Construct request
     const request = {
-      name,
+      parent,
+      requests,
     };
 
     // Run request
-    const response = await tablesClient.getWorkspace(request);
+    const response = await tablesClient.batchCreateRows(request);
     console.log(response);
   }
 
-  getWorkspace();
-  // [END tables_get_workspace_sample]
+  batchCreateRows();
+  // [END tables_batch_create_rows_sample]
 }
 
 process.on('unhandledRejection', err => {

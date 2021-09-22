@@ -12,17 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
 function main(name) {
-  // [START tables_get_table_sample]
+  // [START tables_get_workspace_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the table to retrieve.
-   *  Format: tables/{table}
+   *  Required. The name of the workspace to retrieve.
+   *  Format: workspaces/{workspace}
    */
   // const name = 'abc123'
 
@@ -32,19 +31,19 @@ function main(name) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function getTable() {
+  async function getWorkspace() {
     // Construct request
     const request = {
       name,
     };
 
     // Run request
-    const response = await tablesClient.getTable(request);
+    const response = await tablesClient.getWorkspace(request);
     console.log(response);
   }
 
-  getTable();
-  // [END tables_get_table_sample]
+  getWorkspace();
+  // [END tables_get_workspace_sample]
 }
 
 process.on('unhandledRejection', err => {

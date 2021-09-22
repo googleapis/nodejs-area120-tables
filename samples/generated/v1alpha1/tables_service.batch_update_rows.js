@@ -12,28 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main() {
-  // [START tables_list_tables_sample]
+function main(parent, requests) {
+  // [START tables_batch_update_rows_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The maximum number of tables to return. The service may return fewer than
-   *  this value.
-   *  If unspecified, at most 20 tables are returned. The maximum value is 100;
-   *  values above 100 are coerced to 100.
+   *  Required. The parent table shared by all rows being updated.
+   *  Format: tables/{table}
    */
-  // const pageSize = 1234
+  // const parent = 'abc123'
   /**
-   *  A page token, received from a previous `ListTables` call.
-   *  Provide this to retrieve the subsequent page.
-   *  When paginating, all other parameters provided to `ListTables` must match
-   *  the call that provided the page token.
+   *  Required. The request messages specifying the rows to update.
+   *  A maximum of 500 rows can be modified in a single batch.
    */
-  // const pageToken = 'abc123'
+  // const requests = 1234
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -41,20 +36,20 @@ function main() {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function listTables() {
+  async function batchUpdateRows() {
     // Construct request
     const request = {
+      parent,
+      requests,
     };
 
     // Run request
-    const iterable = await tablesClient.listTablesAsync(request);
-    for await (const response of iterable) {
-        console.log(response);
-    }
+    const response = await tablesClient.batchUpdateRows(request);
+    console.log(response);
   }
 
-  listTables();
-  // [END tables_list_tables_sample]
+  batchUpdateRows();
+  // [END tables_batch_update_rows_sample]
 }
 
 process.on('unhandledRejection', err => {
