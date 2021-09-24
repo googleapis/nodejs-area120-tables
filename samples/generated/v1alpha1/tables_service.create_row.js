@@ -12,24 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, requests) {
-  // [START tables_v1alpha1_generated_TablesService_BatchUpdateRows_async]
+function main(parent, row) {
+  // [START tables_v1alpha1_generated_TablesService_CreateRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The parent table shared by all rows being updated.
+   *  Required. The parent table where this row will be created.
    *  Format: tables/{table}
    */
   // const parent = 'abc123'
   /**
-   *  Required. The request messages specifying the rows to update.
-   *  A maximum of 500 rows can be modified in a single batch.
+   *  Required. The row to create.
    */
-  // const requests = 1234
+  // const row = ''
+  /**
+   *  Optional. Column key to use for values in the row.
+   *  Defaults to user entered name.
+   */
+  // const view = ''
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -37,20 +40,20 @@ function main(parent, requests) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function batchUpdateRows() {
+  async function createRow() {
     // Construct request
     const request = {
       parent,
-      requests,
+      row,
     };
 
     // Run request
-    const response = await tablesClient.batchUpdateRows(request);
+    const response = await tablesClient.createRow(request);
     console.log(response);
   }
 
-  batchUpdateRows();
-  // [END tables_v1alpha1_generated_TablesService_BatchUpdateRows_async]
+  createRow();
+  // [END tables_v1alpha1_generated_TablesService_CreateRow_async]
 }
 
 process.on('unhandledRejection', err => {

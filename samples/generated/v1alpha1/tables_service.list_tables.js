@@ -12,24 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, requests) {
-  // [START tables_v1alpha1_generated_TablesService_BatchCreateRows_async]
+function main() {
+  // [START tables_v1alpha1_generated_TablesService_ListTables_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The parent table where the rows will be created.
-   *  Format: tables/{table}
+   *  The maximum number of tables to return. The service may return fewer than
+   *  this value.
+   *  If unspecified, at most 20 tables are returned. The maximum value is 100;
+   *  values above 100 are coerced to 100.
    */
-  // const parent = 'abc123'
+  // const pageSize = 1234
   /**
-   *  Required. The request message specifying the rows to create.
-   *  A maximum of 500 rows can be created in a single batch.
+   *  A page token, received from a previous `ListTables` call.
+   *  Provide this to retrieve the subsequent page.
+   *  When paginating, all other parameters provided to `ListTables` must match
+   *  the call that provided the page token.
    */
-  // const requests = 1234
+  // const pageToken = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -37,20 +40,19 @@ function main(parent, requests) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function batchCreateRows() {
+  async function listTables() {
     // Construct request
-    const request = {
-      parent,
-      requests,
-    };
+    const request = {};
 
     // Run request
-    const response = await tablesClient.batchCreateRows(request);
-    console.log(response);
+    const iterable = await tablesClient.listTablesAsync(request);
+    for await (const response of iterable) {
+      console.log(response);
+    }
   }
 
-  batchCreateRows();
-  // [END tables_v1alpha1_generated_TablesService_BatchCreateRows_async]
+  listTables();
+  // [END tables_v1alpha1_generated_TablesService_ListTables_async]
 }
 
 process.on('unhandledRejection', err => {

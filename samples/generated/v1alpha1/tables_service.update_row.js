@@ -12,44 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent) {
-  // [START tables_v1alpha1_generated_TablesService_ListRows_async]
+function main(row) {
+  // [START tables_v1alpha1_generated_TablesService_UpdateRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The parent table.
-   *  Format: tables/{table}
+   *  Required. The row to update.
    */
-  // const parent = 'abc123'
+  // const row = ''
   /**
-   *  The maximum number of rows to return. The service may return fewer than
-   *  this value.
-   *  If unspecified, at most 50 rows are returned. The maximum value is 1,000;
-   *  values above 1,000 are coerced to 1,000.
+   *  The list of fields to update.
    */
-  // const pageSize = 1234
-  /**
-   *  A page token, received from a previous `ListRows` call.
-   *  Provide this to retrieve the subsequent page.
-   *  When paginating, all other parameters provided to `ListRows` must match
-   *  the call that provided the page token.
-   */
-  // const pageToken = 'abc123'
+  // const updateMask = ''
   /**
    *  Optional. Column key to use for values in the row.
    *  Defaults to user entered name.
    */
   // const view = ''
-  /**
-   *  Optional. Raw text query to search for in rows of the table.
-   *  Special characters must be escaped. Logical operators and field specific
-   *  filtering not supported.
-   */
-  // const filter = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -57,21 +39,19 @@ function main(parent) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function listRows() {
+  async function updateRow() {
     // Construct request
     const request = {
-      parent,
+      row,
     };
 
     // Run request
-    const iterable = await tablesClient.listRowsAsync(request);
-    for await (const response of iterable) {
-        console.log(response);
-    }
+    const response = await tablesClient.updateRow(request);
+    console.log(response);
   }
 
-  listRows();
-  // [END tables_v1alpha1_generated_TablesService_ListRows_async]
+  updateRow();
+  // [END tables_v1alpha1_generated_TablesService_UpdateRow_async]
 }
 
 process.on('unhandledRejection', err => {

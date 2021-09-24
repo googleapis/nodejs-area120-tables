@@ -12,28 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main() {
-  // [START tables_v1alpha1_generated_TablesService_ListWorkspaces_async]
+function main(name) {
+  // [START tables_v1alpha1_generated_TablesService_GetWorkspace_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The maximum number of workspaces to return. The service may return fewer
-   *  than this value.
-   *  If unspecified, at most 10 workspaces are returned. The maximum value is
-   *  25; values above 25 are coerced to 25.
+   *  Required. The name of the workspace to retrieve.
+   *  Format: workspaces/{workspace}
    */
-  // const pageSize = 1234
-  /**
-   *  A page token, received from a previous `ListWorkspaces` call.
-   *  Provide this to retrieve the subsequent page.
-   *  When paginating, all other parameters provided to `ListWorkspaces` must
-   *  match the call that provided the page token.
-   */
-  // const pageToken = 'abc123'
+  // const name = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -41,20 +31,19 @@ function main() {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function listWorkspaces() {
+  async function getWorkspace() {
     // Construct request
     const request = {
+      name,
     };
 
     // Run request
-    const iterable = await tablesClient.listWorkspacesAsync(request);
-    for await (const response of iterable) {
-        console.log(response);
-    }
+    const response = await tablesClient.getWorkspace(request);
+    console.log(response);
   }
 
-  listWorkspaces();
-  // [END tables_v1alpha1_generated_TablesService_ListWorkspaces_async]
+  getWorkspace();
+  // [END tables_v1alpha1_generated_TablesService_GetWorkspace_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -12,24 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START tables_v1alpha1_generated_TablesService_GetRow_async]
+function main() {
+  // [START tables_v1alpha1_generated_TablesService_ListWorkspaces_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the row to retrieve.
-   *  Format: tables/{table}/rows/{row}
+   *  The maximum number of workspaces to return. The service may return fewer
+   *  than this value.
+   *  If unspecified, at most 10 workspaces are returned. The maximum value is
+   *  25; values above 25 are coerced to 25.
    */
-  // const name = 'abc123'
+  // const pageSize = 1234
   /**
-   *  Optional. Column key to use for values in the row.
-   *  Defaults to user entered name.
+   *  A page token, received from a previous `ListWorkspaces` call.
+   *  Provide this to retrieve the subsequent page.
+   *  When paginating, all other parameters provided to `ListWorkspaces` must
+   *  match the call that provided the page token.
    */
-  // const view = ''
+  // const pageToken = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -37,19 +40,19 @@ function main(name) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function getRow() {
+  async function listWorkspaces() {
     // Construct request
-    const request = {
-      name,
-    };
+    const request = {};
 
     // Run request
-    const response = await tablesClient.getRow(request);
-    console.log(response);
+    const iterable = await tablesClient.listWorkspacesAsync(request);
+    for await (const response of iterable) {
+      console.log(response);
+    }
   }
 
-  getRow();
-  // [END tables_v1alpha1_generated_TablesService_GetRow_async]
+  listWorkspaces();
+  // [END tables_v1alpha1_generated_TablesService_ListWorkspaces_async]
 }
 
 process.on('unhandledRejection', err => {

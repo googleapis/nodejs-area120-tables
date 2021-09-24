@@ -12,26 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, names) {
-  // [START tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
+function main(name) {
+  // [START tables_v1alpha1_generated_TablesService_GetRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The parent table shared by all rows being deleted.
-   *  Format: tables/{table}
-   */
-  // const parent = 'abc123'
-  /**
-   *  Required. The names of the rows to delete. All rows must belong to the parent table
-   *  or else the entire batch will fail. A maximum of 500 rows can be deleted
-   *  in a batch.
+   *  Required. The name of the row to retrieve.
    *  Format: tables/{table}/rows/{row}
    */
-  // const names = 'abc123'
+  // const name = 'abc123'
+  /**
+   *  Optional. Column key to use for values in the row.
+   *  Defaults to user entered name.
+   */
+  // const view = ''
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -39,20 +36,19 @@ function main(parent, names) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function batchDeleteRows() {
+  async function getRow() {
     // Construct request
     const request = {
-      parent,
-      names,
+      name,
     };
 
     // Run request
-    const response = await tablesClient.batchDeleteRows(request);
+    const response = await tablesClient.getRow(request);
     console.log(response);
   }
 
-  batchDeleteRows();
-  // [END tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
+  getRow();
+  // [END tables_v1alpha1_generated_TablesService_GetRow_async]
 }
 
 process.on('unhandledRejection', err => {

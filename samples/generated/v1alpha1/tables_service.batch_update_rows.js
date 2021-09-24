@@ -12,19 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START tables_v1alpha1_generated_TablesService_DeleteRow_async]
+function main(parent, requests) {
+  // [START tables_v1alpha1_generated_TablesService_BatchUpdateRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the row to delete.
-   *  Format: tables/{table}/rows/{row}
+   *  Required. The parent table shared by all rows being updated.
+   *  Format: tables/{table}
    */
-  // const name = 'abc123'
+  // const parent = 'abc123'
+  /**
+   *  Required. The request messages specifying the rows to update.
+   *  A maximum of 500 rows can be modified in a single batch.
+   */
+  // const requests = 1234
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -32,19 +36,20 @@ function main(name) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function deleteRow() {
+  async function batchUpdateRows() {
     // Construct request
     const request = {
-      name,
+      parent,
+      requests,
     };
 
     // Run request
-    const response = await tablesClient.deleteRow(request);
+    const response = await tablesClient.batchUpdateRows(request);
     console.log(response);
   }
 
-  deleteRow();
-  // [END tables_v1alpha1_generated_TablesService_DeleteRow_async]
+  batchUpdateRows();
+  // [END tables_v1alpha1_generated_TablesService_BatchUpdateRows_async]
 }
 
 process.on('unhandledRejection', err => {
