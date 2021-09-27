@@ -12,19 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START area120tables_v1alpha1_generated_TablesService_GetWorkspace_async]
+function main(parent, row) {
+  // [START area120tables_v1alpha1_generated_TablesService_CreateRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the workspace to retrieve.
-   *  Format: workspaces/{workspace}
+   *  Required. The parent table where this row will be created.
+   *  Format: tables/{table}
    */
-  // const name = 'abc123'
+  // const parent = 'abc123'
+  /**
+   *  Required. The row to create.
+   */
+  // const row = ''
+  /**
+   *  Optional. Column key to use for values in the row.
+   *  Defaults to user entered name.
+   */
+  // const view = ''
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -32,19 +40,20 @@ function main(name) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function getWorkspace() {
+  async function createRow() {
     // Construct request
     const request = {
-      name,
+      parent,
+      row,
     };
 
     // Run request
-    const response = await tablesClient.getWorkspace(request);
+    const response = await tablesClient.createRow(request);
     console.log(response);
   }
 
-  getWorkspace();
-  // [END area120tables_v1alpha1_generated_TablesService_GetWorkspace_async]
+  createRow();
+  // [END area120tables_v1alpha1_generated_TablesService_CreateRow_async]
 }
 
 process.on('unhandledRejection', err => {

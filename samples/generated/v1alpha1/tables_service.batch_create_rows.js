@@ -12,28 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main() {
-  // [START area120tables_v1alpha1_generated_TablesService_ListTables_async]
+function main(parent, requests) {
+  // [START area120tables_v1alpha1_generated_TablesService_BatchCreateRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The maximum number of tables to return. The service may return fewer than
-   *  this value.
-   *  If unspecified, at most 20 tables are returned. The maximum value is 100;
-   *  values above 100 are coerced to 100.
+   *  Required. The parent table where the rows will be created.
+   *  Format: tables/{table}
    */
-  // const pageSize = 1234
+  // const parent = 'abc123'
   /**
-   *  A page token, received from a previous `ListTables` call.
-   *  Provide this to retrieve the subsequent page.
-   *  When paginating, all other parameters provided to `ListTables` must match
-   *  the call that provided the page token.
+   *  Required. The request message specifying the rows to create.
+   *  A maximum of 500 rows can be created in a single batch.
    */
-  // const pageToken = 'abc123'
+  // const requests = 1234
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -41,20 +36,20 @@ function main() {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function listTables() {
+  async function batchCreateRows() {
     // Construct request
     const request = {
+      parent,
+      requests,
     };
 
     // Run request
-    const iterable = await tablesClient.listTablesAsync(request);
-    for await (const response of iterable) {
-        console.log(response);
-    }
+    const response = await tablesClient.batchCreateRows(request);
+    console.log(response);
   }
 
-  listTables();
-  // [END area120tables_v1alpha1_generated_TablesService_ListTables_async]
+  batchCreateRows();
+  // [END area120tables_v1alpha1_generated_TablesService_BatchCreateRows_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -12,26 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, names) {
-  // [START area120tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
+function main(name) {
+  // [START area120tables_v1alpha1_generated_TablesService_GetWorkspace_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The parent table shared by all rows being deleted.
-   *  Format: tables/{table}
+   *  Required. The name of the workspace to retrieve.
+   *  Format: workspaces/{workspace}
    */
-  // const parent = 'abc123'
-  /**
-   *  Required. The names of the rows to delete. All rows must belong to the parent table
-   *  or else the entire batch will fail. A maximum of 500 rows can be deleted
-   *  in a batch.
-   *  Format: tables/{table}/rows/{row}
-   */
-  // const names = 'abc123'
+  // const name = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -39,20 +31,19 @@ function main(parent, names) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function batchDeleteRows() {
+  async function getWorkspace() {
     // Construct request
     const request = {
-      parent,
-      names,
+      name,
     };
 
     // Run request
-    const response = await tablesClient.batchDeleteRows(request);
+    const response = await tablesClient.getWorkspace(request);
     console.log(response);
   }
 
-  batchDeleteRows();
-  // [END area120tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
+  getWorkspace();
+  // [END area120tables_v1alpha1_generated_TablesService_GetWorkspace_async]
 }
 
 process.on('unhandledRejection', err => {

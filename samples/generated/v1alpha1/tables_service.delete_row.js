@@ -12,24 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
 function main(name) {
-  // [START area120tables_v1alpha1_generated_TablesService_GetRow_async]
+  // [START area120tables_v1alpha1_generated_TablesService_DeleteRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the row to retrieve.
+   *  Required. The name of the row to delete.
    *  Format: tables/{table}/rows/{row}
    */
   // const name = 'abc123'
-  /**
-   *  Optional. Column key to use for values in the row.
-   *  Defaults to user entered name.
-   */
-  // const view = ''
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -37,19 +31,19 @@ function main(name) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function getRow() {
+  async function deleteRow() {
     // Construct request
     const request = {
       name,
     };
 
     // Run request
-    const response = await tablesClient.getRow(request);
+    const response = await tablesClient.deleteRow(request);
     console.log(response);
   }
 
-  getRow();
-  // [END area120tables_v1alpha1_generated_TablesService_GetRow_async]
+  deleteRow();
+  // [END area120tables_v1alpha1_generated_TablesService_DeleteRow_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -12,27 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(row) {
-  // [START area120tables_v1alpha1_generated_TablesService_UpdateRow_async]
+function main(name) {
+  // [START area120tables_v1alpha1_generated_TablesService_GetTable_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The row to update.
+   *  Required. The name of the table to retrieve.
+   *  Format: tables/{table}
    */
-  // const row = ''
-  /**
-   *  The list of fields to update.
-   */
-  // const updateMask = ''
-  /**
-   *  Optional. Column key to use for values in the row.
-   *  Defaults to user entered name.
-   */
-  // const view = ''
+  // const name = 'abc123'
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -40,19 +31,19 @@ function main(row) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function updateRow() {
+  async function getTable() {
     // Construct request
     const request = {
-      row,
+      name,
     };
 
     // Run request
-    const response = await tablesClient.updateRow(request);
+    const response = await tablesClient.getTable(request);
     console.log(response);
   }
 
-  updateRow();
-  // [END area120tables_v1alpha1_generated_TablesService_UpdateRow_async]
+  getTable();
+  // [END area120tables_v1alpha1_generated_TablesService_GetTable_async]
 }
 
 process.on('unhandledRejection', err => {

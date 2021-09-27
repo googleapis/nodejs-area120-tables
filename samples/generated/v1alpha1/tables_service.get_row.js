@@ -12,24 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, requests) {
-  // [START area120tables_v1alpha1_generated_TablesService_BatchCreateRows_async]
+function main(name) {
+  // [START area120tables_v1alpha1_generated_TablesService_GetRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The parent table where the rows will be created.
-   *  Format: tables/{table}
+   *  Required. The name of the row to retrieve.
+   *  Format: tables/{table}/rows/{row}
    */
-  // const parent = 'abc123'
+  // const name = 'abc123'
   /**
-   *  Required. The request message specifying the rows to create.
-   *  A maximum of 500 rows can be created in a single batch.
+   *  Optional. Column key to use for values in the row.
+   *  Defaults to user entered name.
    */
-  // const requests = 1234
+  // const view = ''
 
   // Imports the Tables library
   const {TablesServiceClient} = require('@google/area120-tables').v1alpha1;
@@ -37,20 +36,19 @@ function main(parent, requests) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function batchCreateRows() {
+  async function getRow() {
     // Construct request
     const request = {
-      parent,
-      requests,
+      name,
     };
 
     // Run request
-    const response = await tablesClient.batchCreateRows(request);
+    const response = await tablesClient.getRow(request);
     console.log(response);
   }
 
-  batchCreateRows();
-  // [END area120tables_v1alpha1_generated_TablesService_BatchCreateRows_async]
+  getRow();
+  // [END area120tables_v1alpha1_generated_TablesService_GetRow_async]
 }
 
 process.on('unhandledRejection', err => {
