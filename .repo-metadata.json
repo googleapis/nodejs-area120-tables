@@ -13,5 +13,5 @@
   "client_documentation": "https://cloud.google.com/nodejs/docs/reference/area120-tables/latest",
   "release_level": "preview",
   "api_shortname": "area120tables",
-  "library_type": ""
+  "library_type": "GAPIC_AUTO"
 }
