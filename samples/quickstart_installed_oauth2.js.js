@@ -37,7 +37,7 @@ const destroyer = require('server-destroy');
 // sample app.
 // eslint-disable-next-line node/no-unpublished-require
 // eslint-disable-next-line node/no-missing-require, node/no-unpublished-require
-const keys = require('/Users/sofialeon/Downloads/client_secret_204535198706-fsdmdd23q59qfsm7jv8r5i1c249e442m.apps.googleusercontent.com.json');
+const keys = require('./oauth2.keys.json');
 
 // This sample app only calls read-only methods from the Admin API. Include
 // additional scopes if calling methods that modify the configuration.
