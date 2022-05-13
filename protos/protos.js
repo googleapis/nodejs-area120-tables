@@ -99,7 +99,7 @@
                         };
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|getTable}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#getTable}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef GetTableCallback
                          * @type {function}
@@ -132,7 +132,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|listTables}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#listTables}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef ListTablesCallback
                          * @type {function}
@@ -165,7 +165,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|getWorkspace}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#getWorkspace}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef GetWorkspaceCallback
                          * @type {function}
@@ -198,7 +198,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|listWorkspaces}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#listWorkspaces}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef ListWorkspacesCallback
                          * @type {function}
@@ -231,7 +231,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|getRow}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#getRow}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef GetRowCallback
                          * @type {function}
@@ -264,7 +264,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|listRows}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#listRows}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef ListRowsCallback
                          * @type {function}
@@ -297,7 +297,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|createRow}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#createRow}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef CreateRowCallback
                          * @type {function}
@@ -330,7 +330,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|batchCreateRows}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#batchCreateRows}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef BatchCreateRowsCallback
                          * @type {function}
@@ -363,7 +363,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|updateRow}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#updateRow}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef UpdateRowCallback
                          * @type {function}
@@ -396,7 +396,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|batchUpdateRows}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#batchUpdateRows}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef BatchUpdateRowsCallback
                          * @type {function}
@@ -429,7 +429,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|deleteRow}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#deleteRow}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef DeleteRowCallback
                          * @type {function}
@@ -462,7 +462,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|batchDeleteRows}.
+                         * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#batchDeleteRows}.
                          * @memberof google.area120.tables.v1alpha1.TablesService
                          * @typedef BatchDeleteRowsCallback
                          * @type {function}
@@ -12815,7 +12815,6 @@
                  * @property {boolean|null} [packed] FieldOptions packed
                  * @property {google.protobuf.FieldOptions.JSType|null} [jstype] FieldOptions jstype
                  * @property {boolean|null} [lazy] FieldOptions lazy
-                 * @property {boolean|null} [unverifiedLazy] FieldOptions unverifiedLazy
                  * @property {boolean|null} [deprecated] FieldOptions deprecated
                  * @property {boolean|null} [weak] FieldOptions weak
                  * @property {Array.<google.protobuf.IUninterpretedOption>|null} [uninterpretedOption] FieldOptions uninterpretedOption
@@ -12871,14 +12870,6 @@
                  * @instance
                  */
                 FieldOptions.prototype.lazy = false;
-    
-                /**
-                 * FieldOptions unverifiedLazy.
-                 * @member {boolean} unverifiedLazy
-                 * @memberof google.protobuf.FieldOptions
-                 * @instance
-                 */
-                FieldOptions.prototype.unverifiedLazy = false;
     
                 /**
                  * FieldOptions deprecated.
@@ -12956,8 +12947,6 @@
                         writer.uint32(/* id 6, wireType 0 =*/48).int32(message.jstype);
                     if (message.weak != null && Object.hasOwnProperty.call(message, "weak"))
                         writer.uint32(/* id 10, wireType 0 =*/80).bool(message.weak);
-                    if (message.unverifiedLazy != null && Object.hasOwnProperty.call(message, "unverifiedLazy"))
-                        writer.uint32(/* id 15, wireType 0 =*/120).bool(message.unverifiedLazy);
                     if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                         for (var i = 0; i < message.uninterpretedOption.length; ++i)
                             $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
@@ -13014,9 +13003,6 @@
                             break;
                         case 5:
                             message.lazy = reader.bool();
-                            break;
-                        case 15:
-                            message.unverifiedLazy = reader.bool();
                             break;
                         case 3:
                             message.deprecated = reader.bool();
@@ -13101,9 +13087,6 @@
                     if (message.lazy != null && message.hasOwnProperty("lazy"))
                         if (typeof message.lazy !== "boolean")
                             return "lazy: boolean expected";
-                    if (message.unverifiedLazy != null && message.hasOwnProperty("unverifiedLazy"))
-                        if (typeof message.unverifiedLazy !== "boolean")
-                            return "unverifiedLazy: boolean expected";
                     if (message.deprecated != null && message.hasOwnProperty("deprecated"))
                         if (typeof message.deprecated !== "boolean")
                             return "deprecated: boolean expected";
@@ -13189,8 +13172,6 @@
                     }
                     if (object.lazy != null)
                         message.lazy = Boolean(object.lazy);
-                    if (object.unverifiedLazy != null)
-                        message.unverifiedLazy = Boolean(object.unverifiedLazy);
                     if (object.deprecated != null)
                         message.deprecated = Boolean(object.deprecated);
                     if (object.weak != null)
@@ -13278,7 +13259,6 @@
                         object.lazy = false;
                         object.jstype = options.enums === String ? "JS_NORMAL" : 0;
                         object.weak = false;
-                        object.unverifiedLazy = false;
                         object[".google.api.resourceReference"] = null;
                     }
                     if (message.ctype != null && message.hasOwnProperty("ctype"))
@@ -13293,8 +13273,6 @@
                         object.jstype = options.enums === String ? $root.google.protobuf.FieldOptions.JSType[message.jstype] : message.jstype;
                     if (message.weak != null && message.hasOwnProperty("weak"))
                         object.weak = message.weak;
-                    if (message.unverifiedLazy != null && message.hasOwnProperty("unverifiedLazy"))
-                        object.unverifiedLazy = message.unverifiedLazy;
                     if (message.uninterpretedOption && message.uninterpretedOption.length) {
                         object.uninterpretedOption = [];
                         for (var j = 0; j < message.uninterpretedOption.length; ++j)
