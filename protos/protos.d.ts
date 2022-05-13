@@ -218,84 +218,84 @@ export namespace google {
                 namespace TablesService {
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#getTable}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|getTable}.
                      * @param error Error, if any
                      * @param [response] Table
                      */
                     type GetTableCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.Table) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#listTables}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|listTables}.
                      * @param error Error, if any
                      * @param [response] ListTablesResponse
                      */
                     type ListTablesCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.ListTablesResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#getWorkspace}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|getWorkspace}.
                      * @param error Error, if any
                      * @param [response] Workspace
                      */
                     type GetWorkspaceCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.Workspace) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#listWorkspaces}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|listWorkspaces}.
                      * @param error Error, if any
                      * @param [response] ListWorkspacesResponse
                      */
                     type ListWorkspacesCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.ListWorkspacesResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#getRow}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|getRow}.
                      * @param error Error, if any
                      * @param [response] Row
                      */
                     type GetRowCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.Row) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#listRows}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|listRows}.
                      * @param error Error, if any
                      * @param [response] ListRowsResponse
                      */
                     type ListRowsCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.ListRowsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#createRow}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|createRow}.
                      * @param error Error, if any
                      * @param [response] Row
                      */
                     type CreateRowCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.Row) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#batchCreateRows}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|batchCreateRows}.
                      * @param error Error, if any
                      * @param [response] BatchCreateRowsResponse
                      */
                     type BatchCreateRowsCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.BatchCreateRowsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#updateRow}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|updateRow}.
                      * @param error Error, if any
                      * @param [response] Row
                      */
                     type UpdateRowCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.Row) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#batchUpdateRows}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|batchUpdateRows}.
                      * @param error Error, if any
                      * @param [response] BatchUpdateRowsResponse
                      */
                     type BatchUpdateRowsCallback = (error: (Error|null), response?: google.area120.tables.v1alpha1.BatchUpdateRowsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#deleteRow}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|deleteRow}.
                      * @param error Error, if any
                      * @param [response] Empty
                      */
                     type DeleteRowCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
                     /**
-                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService#batchDeleteRows}.
+                     * Callback as used by {@link google.area120.tables.v1alpha1.TablesService|batchDeleteRows}.
                      * @param error Error, if any
                      * @param [response] Empty
                      */
@@ -5092,6 +5092,9 @@ export namespace google {
             /** FieldOptions lazy */
             lazy?: (boolean|null);
 
+            /** FieldOptions unverifiedLazy */
+            unverifiedLazy?: (boolean|null);
+
             /** FieldOptions deprecated */
             deprecated?: (boolean|null);
 
@@ -5128,6 +5131,9 @@ export namespace google {
 
             /** FieldOptions lazy. */
             public lazy: boolean;
+
+            /** FieldOptions unverifiedLazy. */
+            public unverifiedLazy: boolean;
 
             /** FieldOptions deprecated. */
             public deprecated: boolean;
